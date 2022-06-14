@@ -1,6 +1,6 @@
 # reaction-game
 
-çsimple project with Vue3 to play a reaction game
+Simple project with Vue3 to play a reaction game
 
 ## Project setup
 ```
