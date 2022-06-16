@@ -13,25 +13,36 @@ export default {
     data() {
         return {
             showBlock: false,
+            top: 0,
+            left: 0,
         };
     },
     mounted() {
         setTimeout(() => {
             this.showBlock = true;
+            this.top = `${Math.random() * 900 * Math.random()}px`;
+            this.left = `${Math.random() * 2500 * Math.random()}px`;
         }, this.delay);
     },
+    updated() {
+        console.log(this.top, this.left);
+    },
+    unmounted() {},
 };
 </script>
 
 <style>
 .block {
     width: 450px;
+    height: 300px;
     border-radius: 20px;
-    background: #ecd907;
+    /* background: #ecd907; */
     color: white;
     text-align: center;
-    /* padding: 100px 0;
-    margin: 40px auto; */
+
+    position: absolute;
+    top: v-bind(top);
+    left: v-bind(left);
 }
 img {
     width: 400px;
